@@ -85,7 +85,6 @@ define(['managerAPI', 'https://cdn.jsdelivr.net/gh/minnojs/minno-datapipe@1.*/da
         {
             mixer:'random',
             data:[
-                {inherit: 'explicits'},
 
                 // force the instructions to preceed the iat
                 {
