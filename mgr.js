@@ -4,51 +4,7 @@ define(['managerAPI', 'https://cdn.jsdelivr.net/gh/minnojs/minno-datapipe@1.*/da
 
     API.setName('mgr');
     API.addSettings('skip',true);
-	init_data_pipe(API, 'f0ZJQg2FYO7i',  {file_type:'csv'});	
-	
-    //Randomly select which of two sets of category labels to use.
-    let raceSet = API.shuffle(['a','b'])[0];
-    let blackLabels = [];
-    let whiteLabels = [];
-
-    if (raceSet == 'a') {
-        blackLabels.push('African Americans');
-        whiteLabels.push('European Americans');
-    } else {
-        blackLabels.push('Black people');
-        whiteLabels.push('White people');
-    }
-
-    API.addGlobal({
-        raceiat:{},
-        //YBYB: change when copying back to the correct folder
-        baseURL: './images/',
-        raceSet:raceSet,
-        blackLabels:blackLabels,
-        whiteLabels:whiteLabels,
-        //Select randomly what attribute words to see. 
-        //Based on Axt, Feng, & Bar-Anan (2021).
-        posWords : API.shuffle([
-            'Love', 'Cheer', 'Friend', 'Pleasure',
-            'Adore', 'Cheerful', 'Friendship', 'Joyful', 
-            'Smiling','Cherish', 'Excellent', 'Glad', 
-            'Joyous', 'Spectacular', 'Appealing', 'Delight', 
-            'Excitement', 'Laughing', 'Attractive','Delightful', 
-            'Fabulous', 'Glorious', 'Pleasing', 'Beautiful', 
-            'Fantastic', 'Happy', 'Lovely', 'Terrific', 
-            'Celebrate', 'Enjoy', 'Magnificent', 'Triumph'
-        ]), 
-        negWords : API.shuffle([
-            'Abuse', 'Grief', 'Poison', 'Sadness', 
-            'Pain', 'Despise', 'Failure', 'Nasty', 
-            'Angry', 'Detest', 'Horrible', 'Negative', 
-            'Ugly', 'Dirty', 'Gross', 'Evil', 
-            'Rotten','Annoy', 'Disaster', 'Horrific',  
-            'Scorn', 'Awful', 'Disgust', 'Hate', 
-            'Humiliate', 'Selfish', 'Tragic', 'Bothersome', 
-            'Hatred', 'Hurtful', 'Sickening', 'Yucky'
-        ])
-    });
+	init_data_pipe(API, 'bZNfiewFjlCY',  {file_type:'csv'});	
 	
     API.addTasksSet({
         instructions: [{
@@ -64,24 +20,10 @@ define(['managerAPI', 'https://cdn.jsdelivr.net/gh/minnojs/minno-datapipe@1.*/da
             header: 'Welcome'
         }],
 
-        raceiat_instructions: [{
-            inherit: 'instructions',
-            name: 'raceiat_instructions',
-            templateUrl: 'raceiat_instructions.jst',
-            title: 'IAT Instructions',
-            header: 'Implicit Association Test'
-        }],
-
-        explicits: [{
-            type: 'quest',
-            name: 'explicits',
-            scriptUrl: 'explicits.js'
-        }],
-
-        race: [{
+        gender: [{
             type: 'time',
             name: 'race',
-            scriptUrl: 'race.js'
+            scriptUrl: 'genderscience.js'
         }],
 
         lastpage: [{
