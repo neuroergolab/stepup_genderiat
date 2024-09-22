@@ -22,7 +22,7 @@ define(['managerAPI', 'https://cdn.jsdelivr.net/gh/minnojs/minno-datapipe@1.*/da
 
         gender: [{
             type: 'time',
-            name: 'race',
+            name: 'gender',
             scriptUrl: 'genderscience.js'
         }],
 
