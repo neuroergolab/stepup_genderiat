@@ -1,0 +1,16 @@
+{
+  "name": "stepup_genderiat",
+  "version": "1.0.0",
+  "homepage": "https://neuroergolab.github.io/stepup_genderiat",
+  "scripts": {
+    "deploy": "gh-pages -d ."
+  },
+  "description": "",
+  "main": "choose.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  }
+}
